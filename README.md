@@ -6,9 +6,6 @@ is reported while the stream is still running.
 
 ## Paper
 
-Weihe Li. The Dog That Didn't Bark: Catching What Stops Arriving, While the
-Stream Runs. PVLDB 2027.
-
 `technical-report/technical-report.pdf` carries the model and the proofs.
 
 ## Files
