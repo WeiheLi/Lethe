@@ -56,12 +56,10 @@ bin/run-b --trace trace.pairs --gt gt_gt.csv --method letheb --mem 61440 \
           --W 400 --L 80 --g 8 --G 8 --match 8 --seed 1 --scan --tag r
 ```
 
-Every method but Lethe takes the budget in bytes directly. Lethe is charged 13
-bytes a bucket while `bin/run`'s store is 8 wide, so it is passed
-`61440 * 8 / 13`, and `--p-bits 16 --ts-bits 16` are what make its fields that
-wide. Without them the store narrows to 6 bytes, the budget silently buys twice
-the buckets, and Lethe comes out above Lethe-B. Lethe-B is charged 10 and takes
-the budget itself.
+`--mem` is the budget. Every method takes it directly except Lethe, whose
+budget is scaled by `8 / 13`, and `--p-bits 16 --ts-bits 16` must go with it:
+without them the layout changes and the comparison with Lethe-B no longer
+holds.
 
 `--method` is one of `lethe`, `letheb`, `pandora`, `stable`, `hyper`, `bloom`,
 `exact`. Each run prints one CSV row, 0-indexed: field 10 is precision, 11
