@@ -68,7 +68,3 @@ recall, 12 `F1`, 16 the rate in M arrivals/s and 17 the bucket count.
 ## FPGA
 
 See `fpga/README.md`.
-
-## License
-
-MIT.
